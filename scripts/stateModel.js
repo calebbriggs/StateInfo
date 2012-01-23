@@ -9,7 +9,7 @@ var stateModel = function(){
 					if(!newValue){ model.cities([]); return;}
 					
 					var info = this;
-					model.cities([]);
+					info.cities([]);
 						$.ajax({ 
 							async: false, 
 							url:  'http://gomashup.com/json.php?fds=geo/usa/zipcode/state/'+newValue.abbreviation, 
