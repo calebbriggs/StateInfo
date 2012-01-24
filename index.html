@@ -11,7 +11,7 @@
 	  <script src="scripts/jquery-1.7.1.js" type="text/javascript"></script>
 	  <script src="scripts/jquery-ui-1.8.16.custom.js" type="text/javascript"></script>
 	  <script src="scripts/jquery.ui.widget.js" type="text/javascript"></script>
-	  <script src="scripts/knockout-1.2.1.js" type="text/javascript"></script>
+	  <script src="scripts/knockout-2.0.0.js" type="text/javascript"></script>
 	  <script src="scripts/underscore-min.js" type="text/javascript"></script> 
 	  <script src="scripts/stateModel.js" type="text/javascript"></script>
 	  <script src="scripts/states.js" type="text/javascript"></script>
@@ -61,6 +61,25 @@
 						<span data-bind="text: chosenCity() ? chosenCity().Latitude : '' "> </span> /
 						<span data-bind="text: chosenCity() ? chosenCity().Longitude : '' "> </span> 
 					</div>
+					<div class="clear"></div><br/> <br/>
+					<div class="grid_12 " data-bind= "visible:  cities().length >0">
+						<table style="width: 90%">
+							<thead>
+								<tr><th>City</th><th>Latitude</th><th>Longitude</th><th>County</th><th>Zip</th><th>State</th></tr>
+							</thead>
+							<tbody data-bind="foreach: cities()">
+								<tr>
+									<td data-bind="text: City"></td>
+									<td data-bind="text: Latitude"></td>           
+									<td data-bind="text: Longitude"></td>           
+									<td data-bind="text: County"></td>           
+									<td data-bind="text: Zipcode"></td>           
+									<td data-bind="text: State"></td>           
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="clear"></div>
 				</div>
 				<div class="clear"> </div>
 			</div>	
