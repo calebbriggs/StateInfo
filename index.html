@@ -30,59 +30,63 @@
 
 	</head>
 
-		<body class="bg-color6">			
-			<div class="container_12 ">
-				<div class = "grid_12 alpha omega bg-color1">
-					<h1> State Info </h1>
-					<br/>
-					<br/>
-				</div>
-				<div class = "grid_12 alpha omega bg-color4" style="min-height: 905px; padding-top: 10px;">
-					<div class = "grid_12" >
-						<label>Zip Codes ?: </label><br/>
-						<input type="checkbox" data-bind=" checked: allZips"/>
-					</div><br/><br/><br/>
-					<div class="grid_3 alpha">
-						<div class = "grid_3" >
-							<label>State: </label><br/>
-							<select id="states" data-bind="options: states,optionsText: 'displayName', value: chosenState, optionsCaption: 'Choose...'"> </select>
-						</div>
-					</div>
-					<div class = "grid_3" >
-						<label>City: </label><br/>
-						<select id="cities" data-bind="options: cities(),optionsText: 'displayname', value: chosenCity, optionsCaption: 'Choose...'"> </select>
-					</div>
-					<div class = "grid_3" data-bind= "visible: chosenCity()">
-						<label>County: </label><br/>
-						<span data-bind="text: chosenCity() ? chosenCity().County : '' "> </span>
-					</div>
-					<div class = "grid_3 omega" data-bind= "visible: chosenCity()">
-						<label>Lat / Long: </label><br/>
-						<span data-bind="text: chosenCity() ? chosenCity().Latitude : '' "> </span> /
-						<span data-bind="text: chosenCity() ? chosenCity().Longitude : '' "> </span> 
-					</div>
-					<div class="clear"></div><br/> <br/>
-					<div class="grid_12 " data-bind= "visible:  cities().length >0">
-						<table style="width: 90%">
-							<thead>
-								<tr><th>City</th><th>Latitude</th><th>Longitude</th><th>County</th><th>Zip</th><th>State</th></tr>
-							</thead>
-							<tbody data-bind="foreach: cities()">
-								<tr>
-									<td data-bind="text: City"></td>
-									<td data-bind="text: Latitude"></td>           
-									<td data-bind="text: Longitude"></td>           
-									<td data-bind="text: County"></td>           
-									<td data-bind="text: Zipcode"></td>           
-									<td data-bind="text: State"></td>           
-								</tr>
-							</tbody>
-						</table>
+		<body>
+			<div class="bg-color6" style="color: white;">
+				<div class="container_12 ">
+					<div class = "grid_12 alpha omega bg-color1">
+						<h1> State Info </h1>
+						<br/>
+						<br/>
 					</div>
 					<div class="clear"></div>
+					<div class = "grid_12 alpha omega bg-color4" style="min-height: 905px; padding-top: 10px;">
+						<div class = "grid_12" >
+							<label>Zip Codes ?: </label><br/>
+							<input type="checkbox" data-bind=" checked: allZips"/>
+						</div>
+						<div class="clear"></div><br/><br/>
+						<div class="grid_3 alpha">
+							<div class = "grid_3" >
+								<label>State: </label><br/>
+								<select id="states" data-bind="options: states,optionsText: 'displayName', value: chosenState, optionsCaption: 'Choose...'"> </select>
+							</div>
+						</div>
+						<div class = "grid_3" >
+							<label>City: </label><br/>
+							<select id="cities" data-bind="options: cities(),optionsText: 'displayname', value: chosenCity, optionsCaption: 'Choose...'"> </select>
+						</div>
+						<div class = "grid_3" data-bind= "visible: chosenCity()">
+							<label>County: </label><br/>
+							<span data-bind="text: chosenCity() ? chosenCity().County : '' "> </span>
+						</div>
+						<div class = "grid_3 omega" data-bind= "visible: chosenCity()">
+							<label>Lat / Long: </label><br/>
+							<span data-bind="text: chosenCity() ? chosenCity().Latitude : '' "> </span> /
+							<span data-bind="text: chosenCity() ? chosenCity().Longitude : '' "> </span> 
+						</div>
+						<div class="clear"></div><br/> <br/>
+						<div class="grid_12 " data-bind= "visible:  cities().length >0">
+							<table style="width: 95%; color: tan;">
+								<thead style="background-color:#332D2F;">
+									<tr><th>City</th><th>Latitude</th><th>Longitude</th><th>County</th><th>Zip</th><th>State</th></tr>
+								</thead>
+								<tbody data-bind="foreach: cities()">
+									<tr>
+										<td data-bind="text: City"></td>
+										<td data-bind="text: Latitude"></td>           
+										<td data-bind="text: Longitude"></td>           
+										<td data-bind="text: County"></td>           
+										<td data-bind="text: Zipcode"></td>           
+										<td data-bind="text: State"></td>           
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"> </div>
 				</div>
-				<div class="clear"> </div>
-			</div>	
+			</div>
 		</body>
 		<div class="clear"> </div>
 	</html>
